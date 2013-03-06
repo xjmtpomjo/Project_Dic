@@ -2,7 +2,8 @@
   "name": "Project Dic.",
   "description": "Make your own collection of words",
   "version": "0.1",
-  "permissions": ["contextMenus"],
+  "permissions": ["contextMenus","notifications"],
+  "web_accessible_resources": ["dict.png"],
   "background": {
     "scripts": ["pd_main.js"]
   },
