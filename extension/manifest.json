@@ -2,10 +2,35 @@
   "name": "Project Dic.",
   "description": "Make your own collection of words",
   "version": "0.1",
-  "permissions": ["contextMenus","notifications"],
-  "web_accessible_resources": ["dict.png"],
+  "browser_action": {
+  	"default_icon":{
+  		"19": "img/dict_19_off.png"
+  	},
+  	"default_title":"Project Dic.",
+  	"default_popup":"popup.html"
+  },
+  "permissions": [
+  	"tabs",
+  	"contextMenus",
+  	"notifications",
+  	"http://myprojectdictionary.appspot.com/",
+  	"https://www.googleapis.com/auth/userinfo.email",
+  	"https://www.googleapis.com/language/translate/v2/*",
+    "https://www.google.com/accounts/OAuthGetRequestToken",
+    "https://www.google.com/accounts/OAuthAuthorizeToken",
+    "https://www.google.com/accounts/OAuthGetAccessToken"
+  ],
+  "web_accessible_resources": ["img/dict.png"],
   "background": {
-    "scripts": ["pd_main.js"]
+  	"persistent": false,
+    "scripts": [
+        "js/chrome_ex_oauthsimple.js",
+      	"js/chrome_ex_oauth.js",
+      	"js/pd_main.js"
+    ]
+  },
+  "icons": {
+  	"16": "img/dict_context.png"
   },
   "manifest_version": 2
 }
